@@ -20,10 +20,15 @@ In short, this project transforms data into a strategic tool that helps a compan
 ## 📁 Project Overview
 
 In this notebook, I:
+
 - Explored and cleaned the telco customer data.
 - Performed basic feature engineering (binary conversion, one-hot encoding).
 - Visualized feature correlations and removed redundant columns.
 - Built and evaluated a logistic regression model using `scikit-learn`.
+
+### Dataset Preview
+
+![Dataset Preview](dataset-preview.png)
 
 ---
 
@@ -34,6 +39,10 @@ In this notebook, I:
 - Dropped the `Phone` column (non-predictive identifier).
 - Removed all "minutes" columns to eliminate redundancy (since charges already reflect usage).
 
+### Customer Churn Distribution
+
+![Customer Churn Distribution](churn-distribution.png)
+
 ---
 
 ## 📊 Correlation & Feature Selection
@@ -41,6 +50,10 @@ In this notebook, I:
 - Created a correlation heatmap to visualize relationships between features.
 - Identified `Day_Charge` as the most correlated with churn.
 - Refined the feature set to remove less informative or redundant variables.
+
+### Correlation Heatmap
+
+![Correlation Heatmap](correlation-heatmap.png)
 
 ---
 
@@ -50,17 +63,25 @@ In this notebook, I:
 - Built a logistic regression model using `LogisticRegression` from `scikit-learn`.
 - Achieved an **accuracy of ~85%** on the test set — a strong baseline for predicting churn.
 
+### Logistic Regression Model
+
+![Logistic Regression Model](logistic-regression-model.png)
+
 ---
 
 ## 📈 Model Interpretation
 
-After training the classifier, I found that it correctly predicted churn about 85% of the time. This means the model is already fairly effective at identifying customers who are at risk of leaving, making it a valuable tool for retention planning. It’s a strong starting point that could be improved further with advanced modeling or feature engineering.
+After training the classifier, I found that it correctly predicted churn about 85% of the time. This means the model is already fairly effective at identifying customers who are at risk of leaving, making it a valuable tool for retention planning. The classification report provides additional insight into the model's precision, recall, and F1-score across churned and retained customers.
+
+### Classification Report
+
+![Classification Report](classification-report.jpeg)
 
 ---
 
 ## 🧪 Future Improvements
 
-- Add performance metrics like **confusion matrix**, **precision/recall**, and **ROC AUC**.
+- Add performance metrics like **confusion matrix**, **ROC AUC**, and calibration curves.
 - Try more powerful models like **Random Forest** or **Gradient Boosting**.
 - Tune hyperparameters and apply cross-validation for more reliable results.
 - Explore customer segmentation and survival analysis.
